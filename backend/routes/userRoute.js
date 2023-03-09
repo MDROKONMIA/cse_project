@@ -1,11 +1,9 @@
-const express =require('express')
+const express =require('express');
+const { sendEmail } = require('../controller/userController');
 
 const router=express.Router();
 
-router.route("/sentEmail/").post((req,res)=>{
-    console.log(req.data)
-    res.send("i am rokon")
-});
+router.route("/sentmail").post(sendEmail);
 
 
 module.exports=router;

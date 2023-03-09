@@ -1,25 +1,24 @@
-import { CLEAR_ERRORS,
-   RESET_PASSWORD_FAIL, 
-   RESET_PASSWORD_REQUEST, 
-   RESET_PASSWORD_SUCCESS } from "../constants/userConstants";
+import axios from "axios";
+import {
+  CLEAR_ERRORS,
+  EMAIL_SEND_FAILED,
+  EMAIL_SEND_REQUEST,
+  EMAIL_SEND_SUCCESS,
+} from "../constants/userConstants";
 
 // Reset Password
-export const resetPassword = (token, passwords) => async (dispatch) => {
+export const sendEmail = (userData) => async (dispatch) => {
   try {
-    dispatch({ type: RESET_PASSWORD_REQUEST });
+    dispatch({ type: EMAIL_SEND_REQUEST });
     const config = { headers: { "Content-Type": "application/json" } };
-    const { data } = await axios.put(
-      `/api/v1/password/reset/${token}`,
-      passwords,
-      config
-    );
-    dispatch({ type: RESET_PASSWORD_SUCCESS, payload: data.success });
+    const { data } = await axios.post(`/api/v1/sentmail`, userData, config);
+    dispatch({ type: EMAIL_SEND_SUCCESS, payload: data });
   } catch (error) {
-    dispatch({ type: RESET_PASSWORD_FAIL, payload: error.response.data.error });
-
+    dispatch({ type: EMAIL_SEND_FAILED, payload: error.response.data.error });
   }
 };
+
 // cleare Errors
 export const clearErrors = () => async (dispatch) => {
-  dispatch({ type: CLEAR_ERRORSR_ERRORS });
+  dispatch({ type: CLEAR_ERRORS });
 };

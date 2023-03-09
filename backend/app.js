@@ -2,7 +2,6 @@ const express = require("express");
 const app = express();
 const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
-// const fileUpload = require("express-fileupload");
 const path = require("path");
 
 const errorMiddleware = require("./middleware/error");
@@ -31,6 +30,10 @@ const user=require("./routes/userRoute");
 // app.use("/api/v1", payment);
 
 
+// app.router().post("/api/v1/sendEmail",(req,res)=>{
+//   console.log("rokon");
+//   res.send("hello")
+// })
 
 app.use("/api/v1", user );
 

@@ -1,45 +1,44 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux';
+import { toast } from "react-toastify";
 
 import axios from "axios"
+import { sendEmail, clearErrors } from '../../action/userAction';
+
+// const nodemailer=require('nodemailer')
 
 
 const Email = () => {
     const params = useParams();
-const navigate=useNavigate
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
 
     const { email } = params;
     const [sender_Email, setSenderEmail] = useState("");
     const [email_Subject, setEmailSubject] = useState("");
     const [emailBody, setEmailBody] = useState("");
-    // const { error, success, loading } = useSelector(state => state.forgotPassword);
+    const { error, success, loading ,message} = useSelector(state => state.send_email)
 
     const sentEmail = (e) => {
         e.preventDefault();
         const myForm = new FormData();
-
-        myForm.set('from', email);
-        myForm.set('to', sender_Email);
+        myForm.set('to', email);
+        myForm.set('from', sender_Email);
         myForm.set('subject', email_Subject);
         myForm.set('body', emailBody);
-
-        axios.post("http://localhost:4000/api/v1/sentEmail", myForm).then(response=> console.log(response)).then(err=>console.log(err));
-
-        
-
+        dispatch(sendEmail(myForm));
     }
-
-    // useEffect(() => {
-    //     if (error) {
-    //         toast(error);
-    //         dispatch(clearErrors());
-    //     }
-    //     if (success) {
-    //         toast("Password Updated successfully");
-    //         navigate('/login')
-    //     }
-    // }, [dispatch, error, success, navigate])
+    useEffect(() => {
+        if (error) {
+            toast(error);
+            dispatch(clearErrors());
+        }
+        if (success) {
+            toast(message);
+            navigate('/')
+        }
+    }, [dispatch, error, success, navigate,message])
 
     return (
         <div class="w-full max-w-3xl m-auto">
