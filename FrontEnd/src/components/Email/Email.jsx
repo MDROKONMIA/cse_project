@@ -1,23 +1,45 @@
 import React, { useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux';
+
+import axios from "axios"
+
 
 const Email = () => {
     const params = useParams();
+const navigate=useNavigate
+
     const { email } = params;
     const [sender_Email, setSenderEmail] = useState("");
     const [email_Subject, setEmailSubject] = useState("");
     const [emailBody, setEmailBody] = useState("");
+    // const { error, success, loading } = useSelector(state => state.forgotPassword);
 
-   const sentEmail=(e)=>{
-       e.preventDefault();
-       const myForm = new FormData();
+    const sentEmail = (e) => {
+        e.preventDefault();
+        const myForm = new FormData();
 
-       myForm.set('to', newPassword);
-       myForm.set('confirmPassword', confirmPassword);
+        myForm.set('from', email);
+        myForm.set('to', sender_Email);
+        myForm.set('subject', email_Subject);
+        myForm.set('body', emailBody);
 
-       dispatch(resetPassword(params.token, myForm));
+        axios.post("http://localhost:4000/api/v1/sentEmail", myForm).then(response=> console.log(response)).then(err=>console.log(err));
+
         
-   }
+
+    }
+
+    // useEffect(() => {
+    //     if (error) {
+    //         toast(error);
+    //         dispatch(clearErrors());
+    //     }
+    //     if (success) {
+    //         toast("Password Updated successfully");
+    //         navigate('/login')
+    //     }
+    // }, [dispatch, error, success, navigate])
 
     return (
         <div class="w-full max-w-3xl m-auto">
