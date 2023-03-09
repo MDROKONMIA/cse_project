@@ -1,0 +1,10 @@
+
+export const MizanSir = require('./Dr_Md_Mizanur_Rahoman.jpg')
+export const SobujSir = require('./sobuj.jpg')
+export const ZasimUddinSir= require('./Md_Zasim_Uddin.jpg')
+export const SonjoySir = require('./Sanjoy_Kumar_Saha.jpg')
+export const AzadSir = require('./Md_Abul_Kalam_Azad.jpg')
+export const ProdipSir = require('./prodip.jpg')
+export const MarjiaSultanaMam = require('./777-MARJIA-SULTANA.jpg')
+export const FaridSir = require('./Foridul.jpg')
+export const IliasPramanikSir = require('./Dr_Md_Ileas_Pramanik.jpg')
