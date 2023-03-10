@@ -2,9 +2,12 @@ import { createStore, combineReducers, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 import { composeWithDevTools } from "redux-devtools-extension";
 import { sendEmail } from "./Reducer/userReducer";
+import { getAllNews, getAllTeachers } from "./Reducer/allReducer";
 
 const reducer = combineReducers({
   send_email: sendEmail,
+  notice: getAllNews,
+  teachers:getAllTeachers,
 });
 let initialState = {
   cart: {

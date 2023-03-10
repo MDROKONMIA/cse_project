@@ -1,19 +1,9 @@
 import React, { Fragment } from 'react';
-import { MizanSir } from '../../TeachersPhoto/TeacherchPhoto';
 import "./ProductCard.css";
 import { Link } from 'react-router-dom';
 
 
-
-const EmailSection=()=>{
-    return (
-        <>
-      
-        </>
-    )
-}
-
-const ProductCard = ({ data }) => {
+const TeachersCard = ({ data }) => {
     // const {data}=props
 
 
@@ -21,9 +11,9 @@ const ProductCard = ({ data }) => {
 
     return (
         <Fragment>
-            <a >
+            <a>
                 <div className="ProductCardContainer text-dark">
-                    <img className='cardImage' src={data.url} alt="roto" />
+                    <img className='cardImage' src={data.img} alt="roto" />
                     <div className='ProductInfo'>
                         <h1>{data.name}</h1>
                         <p className='text-sm text-left p-0'>{data.dagignation}</p>
@@ -40,4 +30,4 @@ const ProductCard = ({ data }) => {
     )
 }
 
-export default Object.assign(ProductCard, {});
+export default Object.assign(TeachersCard, {});

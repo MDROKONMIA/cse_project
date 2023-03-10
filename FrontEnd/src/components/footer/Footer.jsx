@@ -2,51 +2,74 @@ import React from 'react'
 import GoogleMap from '../gMap/GoogleMap'
 
 const Footer = () => {
+
+    const quickLInks = [
+        { title: "Home", url: "/" },
+        { title: "BRUR", url: "https://brur.ac.bd/" },
+        { title: "Facebook", url: "https://brur.ac.bd/" },
+    ]
+    const FollowUsLinks = [
+        { title: "Facebook", url: "#" },
+        { title: "Twitter", url: "#" },
+        { title: "Instagram", url: "#" },
+    ]
+
     return (
-        <footer class="p-4 bg-white sm:p-6 dark:bg-gray-900">
+        <footer class="p-4 sm:p-6 bg-primary_bg dark:bg-gray-900">
             <div class="flex md:flex md:justify-between">
                 <div class="mb-6 md:mb-0 text-center">
                     {/* <a href="https://flowbite.com/" class="flex items-center">
                         <img src="https://flowbite.com/docs/images/logo.svg" class="h-8 mr-3" alt="FlowBite Logo" />
                         <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
                     </a> */}
-                    <p className='text-xl font-bold'>Our Campus</p>
-
-                    <GoogleMap/>
+                    <p className='text-xl font-bold text-white'>Our Campus</p>
+                    <GoogleMap />
                 </div>
-                <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
-                    <div>
-                        <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Resources</h2>
-                        <ul class="text-gray-600 dark:text-gray-400">
-                            <li class="mb-4">
-                                <a href="https://flowbite.com/" class="hover:underline">Flowbite</a>
-                            </li>
-                            <li>
-                                <a href="https://tailwindcss.com/" class="hover:underline">Tailwind CSS</a>
-                            </li>
-                        </ul>
+                <div className="">
+                    <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
+                        <div>
+                            <h2 class="mb-6 text-sm font-semibold text-white uppercase dark:text-white">Quick Links</h2>
+                            <ul class="text-gray-300 dark:text-gray-400">
+                                {/* start Quick Linkes  */}
+                                {quickLInks ? quickLInks.map((el => (
+                                    <li class="mb-4">
+                                        <a className='text-gray-300 hover:text-black hover:font-semibold' href={el.url}>{el.title}</a>
+                                    </li>
+                                ))) : ""}
+                                {/* End Quick Linkes  */}
+
+                            </ul>
+                        </div>
+                        <div>
+                            <h2 class="mb-6 text-sm font-semibold text-white uppercase dark:text-white">Follow us</h2>
+                            <ul class="text-gray-600 dark:text-gray-400">
+                                {/* Start Follow us Links */}
+                                {FollowUsLinks ? FollowUsLinks.map((el) => (
+                                    <li class="mb-4">
+                                        <a className='text-gray-300 hover:text-black hover:font-semibold' href={el.url}>{el.title}</a>
+                                    </li>
+                                )) : ""}
+                                {/* {End Follow us links } */}
+                            </ul>
+                        </div>
+                        <div>
+                            <h2 class="mb-6 text-sm font-semibold text-white uppercase dark:text-white">Legal</h2>
+                            <ul class="text-gray-300 dark:text-gray-400">
+                                <li class="mb-4">
+                                    <a href="#" className='text-gray-300 hover:text-black hover:font-semibold'>Privacy Policy</a>
+                                </li>
+                                <li>
+                                    <a href="#" className='text-gray-300 hover:text-black hover:font-semibold'>Terms &amp; Conditions</a>
+                                </li>
+                            </ul>
+                        </div>
+
+
                     </div>
-                    <div>
-                        <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Follow us</h2>
-                        <ul class="text-gray-600 dark:text-gray-400">
-                            <li class="mb-4">
-                                <a href="https://github.com/themesberg/flowbite" class="hover:underline ">Github</a>
-                            </li>
-                            <li>
-                                <a href="https://discord.gg/4eeurUVvTy" class="hover:underline">Discord</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Legal</h2>
-                        <ul class="text-gray-600 dark:text-gray-400">
-                            <li class="mb-4">
-                                <a href="#" class="hover:underline">Privacy Policy</a>
-                            </li>
-                            <li>
-                                <a href="#" class="hover:underline">Terms &amp; Conditions</a>
-                            </li>
-                        </ul>
+
+                    <div className='capitalize border-t-2 border-black border-double'>
+                        <div className='w-full text-center font-semibold text-white'>Address:</div>
+                        <p className='capitalize text-white'> 2nd Floor, 2nd Academic Building, Begume Rokeya University, Raangpur. Park Mor, Modern, Rangpur-5404, Bangladesh.</p>
                     </div>
                 </div>
             </div>

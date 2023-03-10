@@ -1,5 +1,5 @@
 
-import logo from "../../logo/logo.png";
+import logo from "../../logo/logo1.png";
 
 
 function Header() {
@@ -40,8 +40,9 @@ function Header() {
             title: "People",
             url: "/",
             submenu: [
-                { title: "Teachers", url: "/" },
+                { title: "Teachers", url: "/teachers" },
                 { title: "Students", url: "/" },
+                { title: "staffs", url: "/staffs" },
             ],
         },
         {
@@ -55,7 +56,7 @@ function Header() {
             title: "Notification/Anouncement",
             url: "/",
             submenu: [
-                { title: "Notice", url: "/" },
+                { title: "Notice", url: "/notice" },
                 { title: "News Events", url: "/" },
             ],
         },
@@ -115,26 +116,26 @@ function Header() {
                         </div>
                     </div>
 
-                    <div className="header-bottom-area header-sticky">
+                    <div className="header-bottom-area header-sticky w-full">
                         <div className="container">
                             <div className="row items-center py-3">
-                                <div className="xl:w-2/5 lg:w-2/5  md:w-1/2 w-1/2">
+                                <div className="xl:w-1/5 lg:w-1/5  md:w-1/2 w-1/2">
                                     {/* logo */}
                                     <div className="logo">
                                         <a href="index.html">
-                                            <img src={logo} alt="" height={"1000"} />
+                                            <img src={logo} alt="" width={"200px"} height={"100px"} />
                                         </a>
                                     </div>
                                 </div>
 
                                 {/* {university and deptName} */}
 
-                                <div className="xl:3/5 lg:w-3/5 md:w-1/2 w-1/2">
-                                    <div className="text-center">
+                                <div className="xl:4/5 lg:w-4/5 md:w-1/2 w-1/2">
+                                    <div className=" w-full text-center">
                                         <h1 className="font-extrabold text-4xl">
                                             Department of Compuer Science & Enginnering
                                         </h1>
-                                        <h1 className="font-bold text-lg"> Estalished: 2008</h1>
+                                        <h1 className="font-bold text-lg"> Established: 2008</h1>
                                     </div>
                                 </div>
                             </div>

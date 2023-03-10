@@ -1,0 +1,1 @@
+export const officestaffphoto=require("./officestaf.png")

@@ -9,8 +9,10 @@ import Banner from "./components/Banner.jsx";
 import Footer from "./components/footer/Footer";
 import { useState, useEffect } from "react";
 import Email from "./components/Email/Email";
-
-
+import Notice from "./components/Notice&Events/Notice";
+import Teachers from "./components/teachers/Teachers";
+import OfficeStaffs from "./components/teachers/OfficeStaffs";
+import { ScrollToTop } from "./components/ScrollToTop";
 
 function App() {
   const [theme, setTheme] = useState("light");
@@ -43,16 +45,18 @@ function App() {
         Dark
       </button> */}
       <Router>
-        <Header/>
+        <Header />
+        <ScrollToTop/>
 
         <Routes>
-         <Route path="/" element={<Banner />}/>
-          <Route path="/email/:email" element={<Email/>}/>
+          <Route path="/" element={<Banner />} />
+          <Route path="/email/:email" element={<Email />} />
+          <Route path="/notice" element={<Notice />} />
+          <Route path="/teachers" element={<Teachers />} />
+          <Route path="/staffs" element={<OfficeStaffs />} />
         </Routes>
         <Footer />
       </Router>
-
-
     </>
   );
 }
@@ -83,8 +87,6 @@ export default App;
 //   const marketLeaderReasons = [];
 //   const customerExperienceReasons = [];
 // }
-
-
 
 // function App() {
 //   const [user, setUser] = useState([]);
@@ -123,9 +125,7 @@ export default App;
 //   );
 // }
 
-
 // export default App;
-
 
 // import axios from "axios";
 
