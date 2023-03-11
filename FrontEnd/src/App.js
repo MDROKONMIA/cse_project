@@ -8,11 +8,12 @@ import Header from "./components/header";
 import Footer from "./components/footer/Footer";
 import { useState, useEffect } from "react";
 import Email from "./components/Email/Email";
-import Notice from "./components/Notice&Events/Notice";
+import Notice from "./components/Pages/Notice&Events/Notice";
 import Teachers from "./components/teachers/Teachers";
 import OfficeStaffs from "./components/teachers/OfficeStaffs";
 import { ScrollToTop } from "./components/ScrollToTop";
 import HomePage from "./components/HomePage";
+import AboutOurCseDept from "./components/Pages/AboutOurCseDept";
 
 function App() {
   const [theme, setTheme] = useState("light");
@@ -54,6 +55,7 @@ function App() {
           <Route path="/notice" element={<Notice />} />
           <Route path="/teachers" element={<Teachers />} />
           <Route path="/staffs" element={<OfficeStaffs />} />
+          <Route path="/about_our_cse_deptartment" element={<AboutOurCseDept />} />
         </Routes>
         <Footer />
       </Router>

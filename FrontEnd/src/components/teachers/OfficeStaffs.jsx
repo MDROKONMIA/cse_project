@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import Loader from '../loader/Loader';
+import Loader from '../Layout/loader/Loader';
 import { officestaffphoto } from '../../OfiiceStaffsPhoto';
 import TeacherCard from './TeacherCard';
 

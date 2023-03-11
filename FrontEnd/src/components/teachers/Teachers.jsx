@@ -3,7 +3,7 @@ import React, { Fragment, useEffect, useState } from 'react'
 // import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
 import { clearErrors, getAllTeachers } from '../../action/allAction';
-import Loader from '../loader/Loader';
+import Loader from '../Layout/loader/Loader';
 import TeacherCard from './TeacherCard';
 
 const Teachers = () => {

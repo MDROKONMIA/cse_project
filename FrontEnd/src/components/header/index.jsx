@@ -10,7 +10,7 @@ function Header() {
             title: "About",
             url: "/",
             submenu: [
-                { title: "About CSE", url: "/" },
+                { title: "About Our CSE Department", url: "/about_our_cse_deptartment" },
                 { title: "History", url: "/" },
                 { title: "Vision", url: "/" },
             ],
