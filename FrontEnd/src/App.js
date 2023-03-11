@@ -5,7 +5,6 @@ import "./css/homePage.css";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/header";
-import Banner from "./components/Banner.jsx";
 import Footer from "./components/footer/Footer";
 import { useState, useEffect } from "react";
 import Email from "./components/Email/Email";
@@ -13,6 +12,7 @@ import Notice from "./components/Notice&Events/Notice";
 import Teachers from "./components/teachers/Teachers";
 import OfficeStaffs from "./components/teachers/OfficeStaffs";
 import { ScrollToTop } from "./components/ScrollToTop";
+import HomePage from "./components/HomePage";
 
 function App() {
   const [theme, setTheme] = useState("light");
@@ -46,10 +46,10 @@ function App() {
       </button> */}
       <Router>
         <Header />
-        <ScrollToTop/>
+        <ScrollToTop />
 
         <Routes>
-          <Route path="/" element={<Banner />} />
+          <Route path="/" element={<HomePage />} />
           <Route path="/email/:email" element={<Email />} />
           <Route path="/notice" element={<Notice />} />
           <Route path="/teachers" element={<Teachers />} />

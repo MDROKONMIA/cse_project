@@ -73,7 +73,7 @@ function Header() {
                                     <div className="header-contact-info flex">
                                         <div className="header-contact header-contact-phone">
                                             <span className="ti-headphone"></span>
-                                            <p className="phone-number">+0123456789</p>
+                                            <p className="phone-number">+8801781013468</p>
                                         </div>
                                         <div className="header-contact header-contact-email">
                                             <span className="ti-email"></span>
@@ -121,9 +121,9 @@ function Header() {
                             <div className="row items-center py-3">
                                 <div className="xl:w-1/5 lg:w-1/5  md:w-1/2 w-1/2">
                                     {/* logo */}
-                                    <div className="logo">
-                                        <a href="index.html">
-                                            <img src={logo} alt="" width={"200px"} height={"100px"} />
+                                    <div className="logo m-auto flex">
+                                        <a href="/" className="w-full flex items-center justify-center">
+                                            <img src={logo} alt="" width={"100px"} height={"100px"} />
                                         </a>
                                     </div>
                                 </div>
@@ -135,7 +135,7 @@ function Header() {
                                         <h1 className="font-extrabold text-4xl">
                                             Department of Compuer Science & Enginnering
                                         </h1>
-                                        <h1 className="font-bold text-lg"> Established: 2008</h1>
+                                        <h1 className="font-bold text-lg"> Established: 12 October, 2008</h1>
                                     </div>
                                 </div>
                             </div>
