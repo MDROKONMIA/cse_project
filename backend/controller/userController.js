@@ -85,6 +85,7 @@ exports.getAllTeachers = catchAsyncErrors(async (req, res, next) => {
     });
     return srcs;
   });
+  console.log(teachers)
 
   await browser.close();
   res.status(200).json({

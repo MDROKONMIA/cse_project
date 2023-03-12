@@ -1,5 +1,5 @@
 import React, { Fragment, useEffect, useState } from 'react'
-// import { MizanSir, SobujSir, SonjoySir, AzadSir, ZasimUddinSir, FaridSir, MarjiaSultanaMam, ProdipSir, IliasPramanikSir } from '../../TeachersPhoto/TeacherchPhoto'
+import { MizanSir, SobujSir, SonjoySir, AzadSir, ZasimUddinSir, FaridSir, MarjiaSultanaMam, ProdipSir, IliasPramanikSir } from '../../TeachersPhoto/TeacherchPhoto'
 // import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
 import { clearErrors, getAllTeachers } from '../../action/allAction';
@@ -7,22 +7,22 @@ import Loader from '../Layout/loader/Loader';
 import TeacherCard from './TeacherCard';
 
 const Teachers = () => {
-    // const teachers1 = [
-    //     { name: "Prof.Dr. Abu Kalam Md. Farid Ul Islam", dagignation: "Professor  ", phone: "01712135849", email: "farid_ru@yahoo.com", url: FaridSir },
-    //     { name: "Dr. Md. Mizanur Rahoma", dagignation: "Professor", phone: "01738240159", email: "miarokon2001@gmail.com", url: MizanSir },
-    //     { name: "Dr. Md. Zasim Uddin", dagignation: "Associate Professor", phone: "+8801302947535", email: "zasim@brur.ac.bd", url: ZasimUddinSir },
-    //     { name: "Dr. Md. Ileas Pramanik", dagignation: "Associate Professor", phone: "01762929641", email: "ileas@gmail.com", url: IliasPramanikSir },
-    //     { name: "Prodip Kumar Sarkar", dagignation: "Associate Professor", phone: "01719865262", email: "prodip@brur.ac.bd", url: ProdipSir },
-    //     { name: "Md. Shamsuzzaman", dagignation: "Assistant Professor", phone: "+8801717467709", email: "szaman_409@yahoo.com", url: SobujSir },
-    //     {
-    //         name: "Md. Abul Kalam Azad (On Study Leave)", dagignation: "Assistant Professor", phone: "+8801710504692", email: "akazadth@gmail.com", url: AzadSir
-    //     },
-    //     { name: "Sanjoy Kumar Saha (On Study Leave)", dagignation: "Assistant Professor", phone: "+8801915139510", email: "sanjoy@brur.ac.bd", url: SonjoySir },
-    //     { name: "Marzia Sultana", dagignation: "Lecturer", phone: "+8801763676302", email: "marjia.brur.cse@gmail.com", url: MarjiaSultanaMam },
-    // ]
+    const data = [
+        { name: "Prof.Dr. Abu Kalam Md. Farid Ul Islam", dagignation: "Professor  ", phone: "01712135849", email: "farid_ru@yahoo.com", img: FaridSir },
+        { name: "Dr. Md. Mizanur Rahoma", dagignation: "Professor", phone: "01738240159", email: "miarokon2001@gmail.com", img: MizanSir },
+        { name: "Dr. Md. Zasim Uddin", dagignation: "Associate Professor", phone: "+8801302947535", email: "zasim@brur.ac.bd", img: ZasimUddinSir },
+        { name: "Dr. Md. Ileas Pramanik", dagignation: "Associate Professor", phone: "01762929641", email: "ileas@gmail.com", img: IliasPramanikSir },
+        { name: "Prodip Kumar Sarkar", dagignation: "Associate Professor", phone: "01719865262", email: "prodip@brur.ac.bd", img: ProdipSir },
+        { name: "Md. Shamsuzzaman", dagignation: "Assistant Professor", phone: "+8801717467709", email: "szaman_409@yahoo.com", img: SobujSir },
+        {
+            name: "Md. Abul Kalam Azad (On Study Leave)", dagignation: "Assistant Professor", phone: "+8801710504692", email: "akazadth@gmail.com", img: AzadSir
+        },
+        { name: "Sanjoy Kumar Saha (On Study Leave)", dagignation: "Assistant Professor", phone: "+8801915139510", email: "sanjoy@brur.ac.bd", img: SonjoySir },
+        { name: "Marzia Sultana", dagignation: "Lecturer", phone: "+8801763676302", email: "marjia.brur.cse@gmail.com", img: MarjiaSultanaMam },
+    ]
     const dispatch = useDispatch();
 
-    const { error, data, success, loading } = useSelector(state => state.teachers);
+    const { error, data1, success, loading } = useSelector(state => state.teachers);
 
 
     useEffect(() => {

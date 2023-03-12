@@ -8,7 +8,7 @@ const AboutOurCseDept = () => {
     <div className='container'>
       <h2></h2>
       <div className='lg:flex mb-2'>
-        <div className='w-full lg:w-1/5 bg-black flex'>
+        <div className='w-full lg:w-1/5 bg-black flex items-center'>
           <img src={cseLogo} />
         </div>
         <div className='w-full lg:w-4/5  border-l-gray-700 border-l-2'>
